@@ -19,5 +19,6 @@ from cowchat_app.views import textline_view
 
 urlpatterns = [
     path('', textline_view, name='homepage'),
+    path('lastten/', last_ten, name='lastten'),
     path('admin/', admin.site.urls),
 ]
