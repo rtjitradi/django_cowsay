@@ -5,4 +5,4 @@ from django import forms
 
 
 class TextlineForm(forms.Form):
-    text_line = forms.CharField(max_length=150)
+    text_line = forms.CharField(max_length=110)

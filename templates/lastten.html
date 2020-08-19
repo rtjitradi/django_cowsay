@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <a href="/">Homepage</a> {% for text in last_ten %}
+    <h1>Displaying The 10 Last Texts</h1>
+    <a href="/">Back To Homepage</a> {% for text in last_ten %}
     <ul>
         <li>
             {{ text.text_line }}

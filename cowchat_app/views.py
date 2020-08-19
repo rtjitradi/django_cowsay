@@ -16,12 +16,12 @@ def textline_view(request):
         textline_form = TextlineForm(request.POST)
         if textline_form.is_valid():
             textline_data = textline_form.cleaned_data
-            cowsay_data = textline_data('text_line')
+            cowsay_data = textline_data.get('text_line')
             TextLine.objects.create(text_line=textline_data.get('text_line'))
 # Refer to subprocess doc and Corey' https://www.youtube.com/watch?v=2Fp1N6dof0Y&t=932s
-        cowsay_outputs = subprocess.run(['cowsay', cowsay_data], capture_output=True, text=True)
-        print(cowsay_outputs.stdout)
-        return render(request, 'index.html', {"textline_form": TextlineForm(), 'cowsay_outputs': cowsay_outputs.stdout})
+            cowsay_outputs = subprocess.run(['cowsay', cowsay_data], capture_output=True, text=True)
+            print(cowsay_outputs.stdout)
+            return render(request, 'index.html', {"textline_form": TextlineForm(), 'cowsay_outputs': cowsay_outputs.stdout})
 
     textline_form = TextlineForm()
     return render(request, 'index.html', {'textline_form': textline_form})
