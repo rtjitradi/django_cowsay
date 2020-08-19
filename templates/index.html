@@ -11,7 +11,8 @@
     <h1>Cowsay Homepage</h1>
 
     <a href="/">Homepage</a>
-
+    <br>
+    <br>
     <div>
         <pre>{{ cowsay_outputs }}</pre>
     </div>
@@ -20,7 +21,8 @@
         {% csrf_token %} {{ textline_form.as_p }}
         <input type="submit" value="Submit!">
     </form>
-
+    <br>
+    <br>
     <a href="/lastten/">Last Ten Texts</a>
 </body>
 
