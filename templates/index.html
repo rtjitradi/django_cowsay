@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COWSAY: Homepage</title>
+</head>
+
+<body>
+    <h1>Cowsay Homepage</h1>
+
+    <a href="/">Homepage</a>
+
+    <div>
+        <pre>{{ cowsay_outputs }}</pre>
+    </div>
+
+    <form action="" method="POST">
+        {% csrf_token %} {{ textline_form.as_p }}
+        <input type="submit" value="Submit!">
+    </form>
+
+    <a href="/lastten/">Last Ten Texts</a>
+</body>
+
+</html>
